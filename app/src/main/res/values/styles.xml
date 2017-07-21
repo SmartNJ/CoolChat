@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--避免使用原生的 actionBar-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_blue_500</item>
+        <item name="colorPrimaryDark">@color/material_blue_700</item>
+        <item name="colorAccent">@color/material_pink_A200</item>
+    </style>
+
+    
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!--设置溢出文字颜色、以及Toolbar标签里各view的文字颜色-->
+        <item name="android:textColor">@android:color/holo_red_light</item>
+        <!--设置toolbar上文字颜色-->
+        <item name="actionMenuTextColor">@android:color/holo_blue_light</item>
+        <!--改变溢出菜单和toolbar上文字的大小。-->
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--实下滑线样式-->
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/line</item>
+    </style>
+
+
+</resources>

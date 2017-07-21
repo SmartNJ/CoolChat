@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent"
+                                     android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/llMessage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:gravity="bottom">
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rlMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+                    <!--两个状态的图片-->
+                    <TextView
+                        android:id="@+id/tvMessageIconNormal"
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/message_normal"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvMessageIconPress"
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/message_press"
+                        android:gravity="center"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <!--右上角信息数量-->
+                <TextView
+                    android:id="@+id/tvMessageCount"
+                    android:layout_width="35px"
+                    android:layout_height="35px"
+                    android:layout_alignRight="@+id/rlMessage"
+                    android:layout_marginRight="-20px"
+                    android:background="@mipmap/bg_unread"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@android:color/white"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvMessageTextNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/message"
+                    android:textColor="@color/gray0"/>
+
+                <TextView
+                    android:id="@+id/tvMessageTextPress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/message"
+                    android:textColor="@color/green0"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/llContacts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:gravity="bottom">
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rlContacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+                    <!--两个状态的图片-->
+                    <TextView
+                        android:id="@+id/tvContactsIconNormal"
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/contacts_normal"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvContactsIconPress"
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/contacts_press"
+                        android:gravity="center"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <!--右上角信息数量-->
+                <TextView
+                    android:id="@+id/tvContactsCount"
+                    android:layout_width="35px"
+                    android:layout_height="35px"
+                    android:layout_alignRight="@+id/rlContacts"
+                    android:layout_marginRight="-20px"
+                    android:background="@mipmap/bg_unread"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/tvContactsRedDot"
+                    android:layout_width="20px"
+                    android:layout_height="20px"
+                    android:layout_alignRight="@+id/rlContacts"
+                    android:layout_marginRight="-20px"
+                    android:background="@mipmap/bg_unread"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvContactsTextNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contacts"
+                    android:textColor="@color/gray0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvContactsTextPress"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contacts"
+                    android:textColor="@color/green0"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/llDiscovery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:gravity="bottom">
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rlDiscovery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+                    <!--两个状态的图片-->
+                    <TextView
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:id="@+id/tvDiscoveryIconNormal"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/discovery_normal"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:id="@+id/tvDiscoveryIconPress"
+                        android:background="@mipmap/discovery_press"
+                        android:gravity="center"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <!--右上角信息数量-->
+                <TextView
+                    android:id="@+id/tvDiscoveryCount"
+                    android:layout_width="35px"
+                    android:layout_height="35px"
+                    android:layout_alignRight="@+id/rlDiscovery"
+                    android:layout_marginRight="-20px"
+                    android:background="@mipmap/bg_unread"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvDiscoveryTextNormal"
+                    android:text="@string/discovery"
+                    android:textColor="@color/gray0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/discovery"
+                    android:id="@+id/tvDiscoveryTextPress"
+                    android:textColor="@color/green0"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/llMe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:gravity="bottom">
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rlMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+                    <!--两个状态的图片-->
+                    <TextView
+                        android:id="@+id/tvMeIconNormal"
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:background="@mipmap/me_normal"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:id="@+id/tvMeIconPress"
+                        android:background="@mipmap/me_press"
+                        android:gravity="center"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <!--右上角信息数量-->
+                <TextView
+                    android:id="@+id/tvMeCount"
+                    android:layout_width="35px"
+                    android:layout_height="35px"
+                    android:layout_alignRight="@+id/rlMe"
+                    android:layout_marginRight="-20px"
+                    android:background="@mipmap/bg_unread"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvMeTextNormal"
+                    android:layout_height="wrap_content"
+                    android:text="@string/me"
+                    android:textColor="@color/gray0"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/me"
+                    android:id="@+id/tvMeTextPress"
+                    android:textColor="@color/green0"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

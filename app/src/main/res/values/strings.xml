@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">CoolChat</string>
+
+
+    <!--Toolbar的溢出菜单-->
+    <string name="sendToComputer">发送到电脑</string>
+    <string name="scanQR">扫一扫</string>
+    <string name="addFriend">加好友</string>
+    <string name="groupChat">发起多人聊天</string>
+
+
+    <!--主界面-->
+    <string name="message">微信</string>
+    <string name="contacts">通讯录</string>
+    <string name="discovery">发现</string>
+    <string name="me">我</string>
+</resources>

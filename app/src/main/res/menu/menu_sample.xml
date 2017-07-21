@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <item
+        android:id="@+id/groupChat"
+        android:title="@string/groupChat"/>
+    <item
+        android:id="@+id/addFriend"
+        android:title="@string/addFriend"/>
+    <item
+        android:id="@+id/scanQR"
+        android:title="@string/scanQR"/>
+    <item
+        android:id="@+id/sendToComputer"
+        android:title="@string/sendToComputer"/>
+
+</menu>
