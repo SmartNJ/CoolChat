@@ -19,11 +19,11 @@
 
         <meta-data
             android:name="design_width"
-            android:value="720">
+            android:value="1080">
         </meta-data>
         <meta-data
             android:name="design_height"
-            android:value="1280">
+            android:value="1920">
         </meta-data>
 
         <activity android:name=".MainActivity"/>

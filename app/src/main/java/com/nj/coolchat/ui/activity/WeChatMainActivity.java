@@ -1,10 +1,12 @@
 package com.nj.coolchat.ui.activity;
 
 import android.graphics.Color;
+import android.support.v4.view.ViewPager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nj.coolchat.R;
+import com.nj.coolchat.ui.adapter.MessagePagerAdapter;
 import com.nj.coolchat.ui.base.BaseActivity;
 
 import butterknife.BindView;
@@ -14,6 +16,10 @@ import butterknife.BindView;
  */
 
 public class WeChatMainActivity extends BaseActivity {
+
+    @BindView(R.id.vpContent)
+    ViewPager mVpContent;
+    MessagePagerAdapter msgPagerAdapter;
 
     @BindView(R.id.llMessage)
     LinearLayout mLlMessage;
@@ -86,6 +92,9 @@ public class WeChatMainActivity extends BaseActivity {
         //默认选中第一个
         mTvMessageIconPress.getBackground().setAlpha(255);
         mTvMessageTextPress.setTextColor(Color.argb(255, 153, 153, 153));
+
+        msgPagerAdapter = new MessagePagerAdapter(getSupportFragmentManager());
+        mVpContent.setAdapter(msgPagerAdapter);
     }
 
     /**

@@ -5,16 +5,20 @@
                                      android:orientation="vertical">
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/vpContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
     </android.support.v4.view.ViewPager>
 
+
+    <TextView
+        style="@style/Line"/>
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/llBottom"
         android:layout_width="match_parent"
-        android:layout_height="120px"
+        android:layout_height="162px"
         android:background="@android:color/white"
         android:orientation="horizontal">
 
@@ -32,27 +36,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="5"
-                android:gravity="bottom">
+                android:layout_weight="21"
+                android:gravity="center">
 
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rlMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8px">
                     <!--两个状态的图片-->
                     <TextView
                         android:id="@+id/tvMessageIconNormal"
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="72px"
+                        android:layout_height="64px"
                         android:background="@mipmap/message_normal"
                         android:gravity="center"
                         />
 
                     <TextView
                         android:id="@+id/tvMessageIconPress"
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="72px"
+                        android:layout_height="64px"
                         android:background="@mipmap/message_press"
                         android:gravity="center"
                         />
@@ -60,13 +65,13 @@
                 <!--右上角信息数量-->
                 <TextView
                     android:id="@+id/tvMessageCount"
-                    android:layout_width="35px"
-                    android:layout_height="35px"
+                    android:layout_width="57px"
+                    android:layout_height="57px"
                     android:layout_alignRight="@+id/rlMessage"
-                    android:layout_marginRight="-20px"
+                    android:layout_marginRight="-40px"
                     android:background="@mipmap/bg_unread"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="46"
                     android:textColor="@android:color/white"/>
             </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -74,8 +79,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="3"
-                android:gravity="center">
+                android:layout_weight="14"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/tvMessageTextNormal"
@@ -106,27 +111,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="5"
-                android:gravity="bottom">
+                android:layout_weight="21"
+                android:gravity="center">
 
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rlContacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px"
+                    >
                     <!--两个状态的图片-->
                     <TextView
                         android:id="@+id/tvContactsIconNormal"
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="72px"
+                        android:layout_height="64px"
                         android:background="@mipmap/contacts_normal"
                         android:gravity="center"
                         />
 
                     <TextView
                         android:id="@+id/tvContactsIconPress"
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="72px"
+                        android:layout_height="64px"
                         android:background="@mipmap/contacts_press"
                         android:gravity="center"
                         />
@@ -160,8 +167,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="3"
-                android:gravity="center">
+                android:layout_weight="14"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/tvContactsTextNormal"
@@ -171,8 +178,8 @@
                     android:textColor="@color/gray0"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
                     android:id="@+id/tvContactsTextPress"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/contacts"
                     android:textColor="@color/green0"/>
@@ -192,27 +199,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="5"
-                android:gravity="bottom">
+                android:layout_weight="21"
+                android:gravity="center">
 
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rlDiscovery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px">
                     <!--两个状态的图片-->
                     <TextView
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
                         android:id="@+id/tvDiscoveryIconNormal"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="68px"
+                        android:layout_height="68px"
                         android:background="@mipmap/discovery_normal"
                         android:gravity="center"
                         />
 
                     <TextView
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
                         android:id="@+id/tvDiscoveryIconPress"
+                        android:layout_width="68px"
+                        android:layout_height="68px"
                         android:background="@mipmap/discovery_press"
                         android:gravity="center"
                         />
@@ -235,21 +243,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="3"
-                android:gravity="center">
+                android:layout_weight="14"
+                android:gravity="center_horizontal">
 
                 <TextView
+                    android:id="@+id/tvDiscoveryTextNormal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvDiscoveryTextNormal"
                     android:text="@string/discovery"
                     android:textColor="@color/gray0"/>
 
                 <TextView
+                    android:id="@+id/tvDiscoveryTextPress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/discovery"
-                    android:id="@+id/tvDiscoveryTextPress"
                     android:textColor="@color/green0"/>
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoLinearLayout>
@@ -265,27 +273,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="5"
-                android:gravity="bottom">
+                android:layout_weight="21"
+                android:gravity="center">
 
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rlMe"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true">
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px">
                     <!--两个状态的图片-->
                     <TextView
                         android:id="@+id/tvMeIconNormal"
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
+                        android:layout_width="64px"
+                        android:layout_height="64px"
                         android:background="@mipmap/me_normal"
                         android:gravity="center"
                         />
 
                     <TextView
-                        android:layout_width="@dimen/main_bottom_iv_horizontal_size"
-                        android:layout_height="@dimen/main_bottom_iv_vertical_size"
                         android:id="@+id/tvMeIconPress"
+                        android:layout_width="64px"
+                        android:layout_height="64px"
                         android:background="@mipmap/me_press"
                         android:gravity="center"
                         />
@@ -308,21 +317,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="3"
-                android:gravity="center">
+                android:layout_weight="14"
+                android:gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
                     android:id="@+id/tvMeTextNormal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/me"
                     android:textColor="@color/gray0"/>
 
                 <TextView
+                    android:id="@+id/tvMeTextPress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/me"
-                    android:id="@+id/tvMeTextPress"
                     android:textColor="@color/green0"/>
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoLinearLayout>

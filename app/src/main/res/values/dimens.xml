@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--主界面底部图标大小-->
-    <dimen name="main_bottom_iv_horizontal_size">50px</dimen>
-    <dimen name="main_bottom_iv_vertical_size">50px</dimen>
+
+
 </resources>
