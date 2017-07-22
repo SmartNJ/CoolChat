@@ -18,7 +18,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        init();
+        init();
     }
 
     @Nullable
@@ -26,6 +26,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = LayoutInflater.from(container.getContext())
                 .inflate(provideContentViewId(), container, false);
+        //注意Fragment中使用Butterknife时需要这样使用。
         ButterKnife.bind(this,rootView);
         initView(rootView);
         return rootView;

@@ -2,6 +2,7 @@ package com.nj.coolchat.ui.activity;
 
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -10,6 +11,8 @@ import com.nj.coolchat.ui.adapter.MessagePagerAdapter;
 import com.nj.coolchat.ui.base.BaseActivity;
 
 import butterknife.BindView;
+
+import static com.nj.coolchat.R.id.llMessage;
 
 /**
  * Created by nimon on 2017/7/21.
@@ -22,12 +25,12 @@ public class WeChatMainActivity extends BaseActivity {
     MessagePagerAdapter msgPagerAdapter;
 
 
-    @BindView(R.id.llMessage)
+    @BindView(llMessage)
     LinearLayout mLlMessage;
     @BindView(R.id.tvMessageTextNormal)
-    TextView  mTvMessageTextNormal;
+    TextView mTvMessageTextNormal;
     @BindView(R.id.tvMessageTextPress)
-    TextView  mTvMessageTextPress;
+    TextView mTvMessageTextPress;
     @BindView(R.id.tvMessageIconNormal)
     TextView mTvMessageIconNormal;
     @BindView(R.id.tvMessageIconPress)
@@ -52,13 +55,12 @@ public class WeChatMainActivity extends BaseActivity {
     TextView mTvContactsRedDot;
 
 
-
     @BindView(R.id.llDiscovery)
     LinearLayout mLlDiscovery;
     @BindView(R.id.tvDiscoveryTextNormal)
-    TextView  mTvDiscoveryTextNormal;
+    TextView mTvDiscoveryTextNormal;
     @BindView(R.id.tvDiscoveryTextPress)
-    TextView  mTvDiscoveryTextPress;
+    TextView mTvDiscoveryTextPress;
     @BindView(R.id.tvDiscoveryIconNormal)
     TextView mTvDiscoveryIconNormal;
     @BindView(R.id.tvDiscoveryIconPress)
@@ -70,16 +72,15 @@ public class WeChatMainActivity extends BaseActivity {
     @BindView(R.id.llMe)
     LinearLayout mLlMe;
     @BindView(R.id.tvMeTextNormal)
-    TextView  mTvMeTextNormal;
+    TextView mTvMeTextNormal;
     @BindView(R.id.tvMeTextPress)
-    TextView  mTvMeTextPress;
+    TextView mTvMeTextPress;
     @BindView(R.id.tvMeIconNormal)
     TextView mTvMeIconNormal;
     @BindView(R.id.tvMeIconPress)
     TextView mTvMeIconPress;
     @BindView(R.id.tvMeCount)
     TextView mTvMeCount;
-
 
 
     @Override
@@ -99,8 +100,9 @@ public class WeChatMainActivity extends BaseActivity {
 
     }
 
+
     /**
-     *     设置press的图标和文字的透明度
+     * 重置press的图标和文字的透明度
      */
     private void setTransparency() {
         mTvMessageIconNormal.getBackground().setAlpha(255);
@@ -128,7 +130,37 @@ public class WeChatMainActivity extends BaseActivity {
 
     @Override
     public void initListener() {
-        super.initListener();
+
+        mLlMessage.setOnClickListener(v -> bottomBtnClick(v));
+        mLlContacts.setOnClickListener(v -> bottomBtnClick(v));
+        mLlDiscovery.setOnClickListener(v -> bottomBtnClick(v));
+        mLlMessage.setOnClickListener(v -> bottomBtnClick(v));
+    }
+
+    private void bottomBtnClick(View view) {
+        setTransparency();
+        switch (view.getId()) {
+            case R.id.llMessage:
+                mVpContent.setCurrentItem(0, false);
+                mTvMessageIconPress.getBackground().setAlpha(255);
+                mTvMessageTextPress.setTextColor(Color.argb(255, 69, 192, 26));
+                break;
+            case R.id.llContacts:
+                mVpContent.setCurrentItem(1, false);
+                mTvContactsIconPress.getBackground().setAlpha(255);
+                mTvContactsTextPress.setTextColor(Color.argb(255, 69, 192, 26));
+                break;
+            case R.id.llDiscovery:
+                mVpContent.setCurrentItem(2, false);
+                mTvDiscoveryIconPress.getBackground().setAlpha(255);
+                mTvDiscoveryTextPress.setTextColor(Color.argb(255, 69, 192, 26));
+                break;
+            case R.id.llMe:
+                mVpContent.setCurrentItem(3, false);
+                mTvMeIconPress.getBackground().setAlpha(255);
+                mTvMeTextPress.setTextColor(Color.argb(255, 69, 192, 26));
+                break;
+        }
     }
 
     @Override
