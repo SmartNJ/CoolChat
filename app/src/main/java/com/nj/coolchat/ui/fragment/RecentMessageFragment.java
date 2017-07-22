@@ -1,27 +1,40 @@
 package com.nj.coolchat.ui.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.nj.coolchat.R;
+import com.nj.coolchat.ui.adapter.MessageRecyclerAdapter;
+import com.nj.coolchat.ui.base.BaseFragment;
+
+import butterknife.BindView;
 
 /**
  * Created by nimon on 2017/7/21.
  */
 
-public class RecentMessageFragment extends Fragment{
+public class RecentMessageFragment extends BaseFragment {
+
+    @BindView(R.id.rvRecentMessage)
+    RecyclerView rvRecentMessage;
+    MessageRecyclerAdapter msgRecyclerAdapter;
+
+    RecyclerView.LayoutManager mLayoutManager;
 
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public void initView(View rootView) {
+        mLayoutManager = new LinearLayoutManager(rootView.getContext());
+        rvRecentMessage.setLayoutManager(mLayoutManager);
+        msgRecyclerAdapter = new MessageRecyclerAdapter();
+        rvRecentMessage.setAdapter(msgRecyclerAdapter);
 
-        View rootView = inflater.inflate(R.layout.fragment_recent_message,container,false);
+    }
 
-        return rootView;
+
+    @Override
+    protected int provideContentViewId() {
+        return R.layout.fragment_recent_message;
     }
 }

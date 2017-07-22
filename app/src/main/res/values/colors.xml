@@ -11,7 +11,8 @@
 
     <color name="line">#D2D2D2</color>
     <color name="white">#ffffff</color>
-
+    <color name="black">#000000</color>
+    <color name="black1">#99000000</color>
 
 
     <color name="gray0">#464646</color>

@@ -21,6 +21,7 @@ public class WeChatMainActivity extends BaseActivity {
     ViewPager mVpContent;
     MessagePagerAdapter msgPagerAdapter;
 
+
     @BindView(R.id.llMessage)
     LinearLayout mLlMessage;
     @BindView(R.id.tvMessageTextNormal)
@@ -95,6 +96,7 @@ public class WeChatMainActivity extends BaseActivity {
 
         msgPagerAdapter = new MessagePagerAdapter(getSupportFragmentManager());
         mVpContent.setAdapter(msgPagerAdapter);
+
     }
 
     /**
