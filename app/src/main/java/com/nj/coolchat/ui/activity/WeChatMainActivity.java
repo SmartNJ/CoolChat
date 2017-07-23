@@ -183,8 +183,6 @@ public class WeChatMainActivity extends BaseActivity implements ViewPager.OnPage
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         int transparency_one = (int) (255 * positionOffset);
         int transparency_two = (int) (255 * (1 - positionOffset));
-        System.out.println("transparency_one" + transparency_one);
-        System.out.println("transparency_two" + transparency_two);
         switch (position) {
             case 0:
                 mTvMessageTextPress.setTextColor(Color.argb(transparency_two, 69, 192, 26));
@@ -218,10 +216,6 @@ public class WeChatMainActivity extends BaseActivity implements ViewPager.OnPage
                 break;
 
         }
-        System.out.println("onPageScrolled 当前页面 position:" + position);
-        System.out.println("onPageScrolled 下一个可能的页面 position+1:" + (position + 1));
-        //        System.out.println("onPageScrolled 当前 positionOffset:"+positionOffset);
-        //        System.out.println("onPageScrolled 当前 positionOffsetPixels:"+positionOffsetPixels);
     }
 
     /**
@@ -231,7 +225,7 @@ public class WeChatMainActivity extends BaseActivity implements ViewPager.OnPage
      */
     @Override
     public void onPageSelected(int position) {
-        System.out.println("onPageSelected 当前 position:" + position);
+//        System.out.println("onPageSelected 当前 position:" + position);
 
     }
 
@@ -243,7 +237,7 @@ public class WeChatMainActivity extends BaseActivity implements ViewPager.OnPage
      */
     @Override
     public void onPageScrollStateChanged(int state) {
-        System.out.println("onPageScrollStateChanged 当前 state:" + state);
+//        System.out.println("onPageScrollStateChanged 当前 state:" + state);
 
     }
 }

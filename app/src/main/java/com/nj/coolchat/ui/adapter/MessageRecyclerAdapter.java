@@ -25,6 +25,7 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
 
     @Override
     public void onBindViewHolder(MessageRecyclerViewHolder holder, int position) {
+//        System.out.println("onBindViewHolder 中的position ：" + position);
         holder.tvDisplayName.setText("小宇宙");
         holder.tvTime.setText("15:34");
         holder.tvContent.setText("你好");
@@ -36,7 +37,7 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
         return 60;
     }
 
-    public class MessageRecyclerViewHolder extends  RecyclerView.ViewHolder{
+    public class MessageRecyclerViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvDisplayName;
         TextView tvTime;
@@ -53,7 +54,7 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
         //ViewHolder主要做什么？
         //主要是获取这个ItemView中的某些view，那是不是每次新增view，都要在这里findViewById一次呢？
 
-//        public static View getView(int resId, int )
+        //        public static View getView(int resId, int )
 
 
     }
