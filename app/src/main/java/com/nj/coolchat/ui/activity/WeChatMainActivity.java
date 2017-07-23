@@ -18,7 +18,7 @@ import static com.nj.coolchat.R.id.llMessage;
  * Created by nimon on 2017/7/21.
  */
 
-public class WeChatMainActivity extends BaseActivity {
+public class WeChatMainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     @BindView(R.id.vpContent)
     ViewPager mVpContent;
@@ -109,14 +109,17 @@ public class WeChatMainActivity extends BaseActivity {
         mTvContactsIconNormal.getBackground().setAlpha(255);
         mTvDiscoveryIconNormal.getBackground().setAlpha(255);
         mTvMeIconNormal.getBackground().setAlpha(255);
+
         mTvMessageIconPress.getBackground().setAlpha(1);
         mTvContactsIconPress.getBackground().setAlpha(1);
         mTvDiscoveryIconPress.getBackground().setAlpha(1);
         mTvMeIconPress.getBackground().setAlpha(1);
+
         mTvMessageTextNormal.setTextColor(Color.argb(255, 153, 153, 153));
         mTvContactsTextNormal.setTextColor(Color.argb(255, 153, 153, 153));
         mTvDiscoveryTextNormal.setTextColor(Color.argb(255, 153, 153, 153));
         mTvMeTextNormal.setTextColor(Color.argb(255, 153, 153, 153));
+
         mTvMessageTextPress.setTextColor(Color.argb(0, 69, 192, 26));
         mTvContactsTextPress.setTextColor(Color.argb(0, 69, 192, 26));
         mTvDiscoveryTextPress.setTextColor(Color.argb(0, 69, 192, 26));
@@ -131,10 +134,12 @@ public class WeChatMainActivity extends BaseActivity {
     @Override
     public void initListener() {
 
+        mVpContent.setOnPageChangeListener(this);
+
         mLlMessage.setOnClickListener(v -> bottomBtnClick(v));
         mLlContacts.setOnClickListener(v -> bottomBtnClick(v));
         mLlDiscovery.setOnClickListener(v -> bottomBtnClick(v));
-        mLlMessage.setOnClickListener(v -> bottomBtnClick(v));
+        mLlMe.setOnClickListener(v -> bottomBtnClick(v));
     }
 
     private void bottomBtnClick(View view) {
@@ -166,5 +171,79 @@ public class WeChatMainActivity extends BaseActivity {
     @Override
     protected int provideContentViewId() {
         return R.layout.activity_wechat_main;
+    }
+
+
+    /**
+     * @param position             当前你滑动的页面
+     * @param positionOffset       当前页面偏移的百分比
+     * @param positionOffsetPixels 当前页面的偏移像素
+     */
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        int transparency_one = (int) (255 * positionOffset);
+        int transparency_two = (int) (255 * (1 - positionOffset));
+        System.out.println("transparency_one" + transparency_one);
+        System.out.println("transparency_two" + transparency_two);
+        switch (position) {
+            case 0:
+                mTvMessageTextPress.setTextColor(Color.argb(transparency_two, 69, 192, 26));
+                mTvMessageTextNormal.setTextColor(Color.argb(transparency_one, 153,153,153));
+                mTvContactsTextPress.setTextColor(Color.argb(transparency_one, 69, 192, 26));
+                mTvContactsTextNormal.setTextColor(Color.argb(transparency_two,153,153,153));
+                mTvMessageIconNormal.getBackground().setAlpha(transparency_one);
+                mTvMessageIconPress.getBackground().setAlpha(transparency_two);
+                mTvContactsIconPress.getBackground().setAlpha(transparency_one);
+                mTvContactsIconNormal.getBackground().setAlpha(transparency_two);
+                break;
+            case 1:
+                mTvContactsTextPress.setTextColor(Color.argb(transparency_two, 69, 192, 26));
+                mTvContactsTextNormal.setTextColor(Color.argb(transparency_one, 153,153,153));
+                mTvDiscoveryTextPress.setTextColor(Color.argb(transparency_one, 69, 192, 26));
+                mTvDiscoveryTextNormal.setTextColor(Color.argb(transparency_two,153,153,153));
+                mTvContactsIconNormal.getBackground().setAlpha(transparency_one);
+                mTvContactsIconPress.getBackground().setAlpha(transparency_two);
+                mTvDiscoveryIconPress.getBackground().setAlpha(transparency_one);
+                mTvDiscoveryIconNormal.getBackground().setAlpha(transparency_two);
+                break;
+            case 2:
+                mTvDiscoveryTextPress.setTextColor(Color.argb(transparency_two, 69, 192, 26));
+                mTvDiscoveryTextNormal.setTextColor(Color.argb(transparency_one, 153,153,153));
+                mTvMeTextPress.setTextColor(Color.argb(transparency_one, 69, 192, 26));
+                mTvMeTextNormal.setTextColor(Color.argb(transparency_two,153,153,153));
+                mTvDiscoveryIconNormal.getBackground().setAlpha(transparency_one);
+                mTvDiscoveryIconPress.getBackground().setAlpha(transparency_two);
+                mTvMeIconPress.getBackground().setAlpha(transparency_one);
+                mTvMeIconNormal.getBackground().setAlpha(transparency_two);
+                break;
+
+        }
+        System.out.println("onPageScrolled 当前页面 position:" + position);
+        System.out.println("onPageScrolled 下一个可能的页面 position+1:" + (position + 1));
+        //        System.out.println("onPageScrolled 当前 positionOffset:"+positionOffset);
+        //        System.out.println("onPageScrolled 当前 positionOffsetPixels:"+positionOffsetPixels);
+    }
+
+    /**
+     * 页面移动完毕后调用
+     *
+     * @param position 当前移动完毕后的页面
+     */
+    @Override
+    public void onPageSelected(int position) {
+        System.out.println("onPageSelected 当前 position:" + position);
+
+    }
+
+
+    /**
+     * state 0: 什么也没做， 1: 正在滑动 2: 滑动完毕    1->2->0
+     *
+     * @param state SCROLL_STATE_DRAGGING -> SCROLL_STATE_SETTLING -> SCROLL_STATE_IDLE
+     */
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        System.out.println("onPageScrollStateChanged 当前 state:" + state);
+
     }
 }
